@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 *.xlsx
 *.csv
+/carbide-nation-463909-p7-6b891ba0da43.json
+last_scrape.json

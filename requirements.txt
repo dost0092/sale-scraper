@@ -1,11 +1,9 @@
 flask
-gunicorn
 pandas
-gspread
 google-api-python-client
 google-auth
+google-auth-httplib2
 google-auth-oauthlib
-apscheduler
 playwright
-aiohttp
+apscheduler
 xlsxwriter

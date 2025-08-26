@@ -1,5 +1,6 @@
 import os
 import re
+import json
 import asyncio
 import aiohttp
 import gspread
@@ -19,7 +20,11 @@ from playwright.async_api import async_playwright, TimeoutError as PlaywrightTim
 # Configuration
 BASE_URL = "https://salesweb.civilview.com/"
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-SERVICE_ACCOUNT_FILE = 'carbide-nation-463909-p7-6b891ba0da43.json'  # Update with your path
+SERVICE_ACCOUNT_JSON = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
+credentials = service_account.Credentials.from_service_account_info(
+    json.loads(SERVICE_ACCOUNT_JSON),
+    scopes=SCOPES
+)
 SPREADSHEET_ID = '1BHQygLkM1fLw6VKjYuvDbC_qpMfQ7MzTqzOTMgQt1t8'  # From your error
 LOCAL_CSV_PATH = "foreclosure_sales.csv"
 OUTPUT_FILE = "foreclosure_sales.xlsx"
